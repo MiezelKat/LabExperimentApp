@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7B12734CF6CB56DE461E21A3D3FC317C217528E5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2955ECD860FF0A994B0DF1637DA032E807CD6BF0" : 9223372036854775807,
+    "7B12734CF6CB56DE461E21A3D3FC317C217528E5" : 9223372036854775807,
+    "B38181D1CB1D695946CF44A793028E14DFB8FB37" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A6780E18-A0B0-443C-BF4F-794F35005375",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2955ECD860FF0A994B0DF1637DA032E807CD6BF0" : "LabExperiment\/modules\/AWSense\/",
+    "7B12734CF6CB56DE461E21A3D3FC317C217528E5" : "LabExperiment\/",
+    "B38181D1CB1D695946CF44A793028E14DFB8FB37" : "LabExperiment\/modules\/MSBandEvaluation\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LabExperiment",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LabExperiment.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MiezelKat\/AWSense.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2955ECD860FF0A994B0DF1637DA032E807CD6BF0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MiezelKat\/LabExperimentApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B12734CF6CB56DE461E21A3D3FC317C217528E5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MiezelKat\/MSBandEvaluation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B38181D1CB1D695946CF44A793028E14DFB8FB37"
+    }
+  ]
+}

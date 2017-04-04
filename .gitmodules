@@ -1,0 +1,11 @@
+[submodule "modules"]
+	path = modules
+	url = https://github.com/MiezelKat/AWSense.git
+	branch = working
+[submodule "modules/AWSense"]
+	path = modules/AWSense
+	url = https://github.com/MiezelKat/AWSense.git
+	branch = working
+[submodule "modules/MSBandEvaluation"]
+	path = modules/MSBandEvaluation
+	url = https://github.com/MiezelKat/MSBandEvaluation.git
