@@ -10,6 +10,14 @@ import UIKit
 
 class StartViewController: UITableViewController {
 
+    @IBOutlet weak var awStatusLabel: UILabel!
+    
+    @IBOutlet weak var msbStatusLabel: UILabel!
+    
+    @IBOutlet weak var polarStatusLabel: UILabel!
+    
+    @IBOutlet weak var pIDTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +28,11 @@ class StartViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func startSessionButtonPressed(_ sender: Any) {
+        
+        
+        
+    }
 
 }
 

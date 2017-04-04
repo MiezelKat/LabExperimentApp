@@ -15,8 +15,19 @@ import AWSenseConnectPhone
 
 class SessionViewController: UITableViewController, RemoteSensingEventHandler {
 
+    @IBOutlet weak var pIDLabel: UILabel!
 
+    @IBOutlet weak var startLabel: UILabel!
 
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    @IBOutlet weak var awHRLabel: UILabel!
+    
+    @IBOutlet weak var msbHRLabel: UILabel!
+    
+    @IBOutlet weak var polarHRLabel: UILabel!
+    
+    
     
     
     let sessionManager = SessionManager.instance
@@ -33,51 +44,55 @@ class SessionViewController: UITableViewController, RemoteSensingEventHandler {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func stopSessionPressed(_ sender: Any) {
+        
+    }
 
-    @IBAction func startButtonPressed(_ sender: Any) {
-        
-        disableStartSessionElements()
-        
-        var enabledSensors : [AWSSensorType] = [.heart_rate, .accelerometer, .device_motion]
-        
-        let transmissionIntervall = DataTransmissionInterval(Double(intervallSlider.value))
-        
-        do {
-            // TODO: test sensor settings
-            try sessionManager.startSensingSession(withName: nameTextField.text, configuration: enabledSensors, sensorSettings: [RawAccelerometerSensorSettings(withIntervall_Hz: 1.0)], transmissionIntervall: transmissionIntervall)
-            
-        }catch let error as Error{
-            print(error)
-        }
-        
-        
-    }
+//    @IBAction func startButtonPressed(_ sender: Any) {
+//        
+//        disableStartSessionElements()
+//        
+//        var enabledSensors : [AWSSensorType] = [.heart_rate, .accelerometer, .device_motion]
+//        
+//        let transmissionIntervall = DataTransmissionInterval(Double(intervallSlider.value))
+//        
+//        do {
+//            // TODO: test sensor settings
+//            try sessionManager.startSensingSession(withName: nameTextField.text, configuration: enabledSensors, sensorSettings: [RawAccelerometerSensorSettings(withIntervall_Hz: 1.0)], transmissionIntervall: transmissionIntervall)
+//            
+//        }catch let error as Error{
+//            print(error)
+//        }
+//        
+//        
+//    }
+//    
+//    func disableStartSessionElements(){
+//        beforeStartCollection.forEach({ (s) in
+//                s.isEnabled = false
+//            })
+//        startSensingButton.isEnabled = false
+//        nameTextField.isEnabled = false
+//    }
+//    
+//    func enableSessionRunningElements(){
+//        // todo
+//    }
+//    
+//    @IBAction func stopButtonPressed(_ sender: Any) {
+//        if(timer != nil){
+//            timer!.invalidate()
+//        }
+//        do{
+//            try sessionManager.stopSensing()
+//            
+//        }catch let error as Error{
+//            print(error)
+//        }
+//    }
     
-    func disableStartSessionElements(){
-        beforeStartCollection.forEach({ (s) in
-                s.isEnabled = false
-            })
-        startSensingButton.isEnabled = false
-        nameTextField.isEnabled = false
-    }
-    
-    func enableSessionRunningElements(){
-        // todo
-    }
-    
-    @IBAction func stopButtonPressed(_ sender: Any) {
-        if(timer != nil){
-            timer!.invalidate()
-        }
-        do{
-            try sessionManager.stopSensing()
-            
-        }catch let error as Error{
-            print(error)
-        }
-    }
-    
-//    public func handle(withType type: RemoteSensingEventType, forSession session: RemoteSensingSession?, withData data: [AWSSensorData]?) {
+    public func handle(withType type: RemoteSensingEventType, forSession session: RemoteSensingSession?, withData data: [AWSSensorData]?) {
 //        if(type == .sessionCreated){
 //            self.sessionStatusLabel.text = "session created"
 //        }else if(type == .sessionStateChanged){
@@ -112,16 +127,16 @@ class SessionViewController: UITableViewController, RemoteSensingEventHandler {
 //                }
 //            }
 //        }
-//    }
-//    
-//    var messageCount = 0
-//    
-//    public func updateTimerLabel(){
+    }
+    
+    var messageCount = 0
+    
+    public func updateTimerLabel(){
 //        DispatchQueue.main.async {
 //            self.sessionTimeLabel.text = Date().timeIntervalSince(self.sessionStartDate!).description
 //        }
-//    }
-//    
+    }
+//
 //    @IBAction func intervallValueChanged(_ sender: Any) {
 //        let roundedValue = lroundf(intervallSlider.value)
 //        intervallSlider.setValue(Float(roundedValue), animated: true)
