@@ -33,6 +33,12 @@
 		46E17A151E941BE0002B46A5 /* AWSenseWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A131E941BE0002B46A5 /* AWSenseWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46E17A171E941BE0002B46A5 /* AWSenseShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A161E941BE0002B46A5 /* AWSenseShared.framework */; };
 		46E17A181E941BE0002B46A5 /* AWSenseShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A161E941BE0002B46A5 /* AWSenseShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46FAB1E91E97BBCA00D7357D /* PolarHRService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FAB1E81E97BBCA00D7357D /* PolarHRService.framework */; };
+		46FAB1EA1E97BBCA00D7357D /* PolarHRService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46FAB1E81E97BBCA00D7357D /* PolarHRService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46FAB1EC1E97BBCA00D7357D /* MSBandSensorService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FAB1EB1E97BBCA00D7357D /* MSBandSensorService.framework */; };
+		46FAB1ED1E97BBCA00D7357D /* MSBandSensorService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46FAB1EB1E97BBCA00D7357D /* MSBandSensorService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46FAB1EF1E97BBCA00D7357D /* SensorEvaluationShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FAB1EE1E97BBCA00D7357D /* SensorEvaluationShared.framework */; };
+		46FAB1F01E97BBCA00D7357D /* SensorEvaluationShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46FAB1EE1E97BBCA00D7357D /* SensorEvaluationShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +88,10 @@
 			dstSubfolderSpec = 10;
 			files = (
 				46E17A0A1E941BB8002B46A5 /* AWSenseShared.framework in Embed Frameworks */,
+				46FAB1ED1E97BBCA00D7357D /* MSBandSensorService.framework in Embed Frameworks */,
+				46FAB1F01E97BBCA00D7357D /* SensorEvaluationShared.framework in Embed Frameworks */,
 				46E17A0E1E941BC3002B46A5 /* AWSenseConnectPhone.framework in Embed Frameworks */,
+				46FAB1EA1E97BBCA00D7357D /* PolarHRService.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +139,10 @@
 		46E17A0F1E941BD3002B46A5 /* AWSenseConnectWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseConnectWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E17A131E941BE0002B46A5 /* AWSenseWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E17A161E941BE0002B46A5 /* AWSenseShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46FAB1E81E97BBCA00D7357D /* PolarHRService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PolarHRService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46FAB1EB1E97BBCA00D7357D /* MSBandSensorService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MSBandSensorService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46FAB1EE1E97BBCA00D7357D /* SensorEvaluationShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SensorEvaluationShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46FAB1F11E97BC0400D7357D /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftBandKit_iOS.framework; path = ../modules/MSBandEvaluation/MSBandSensorService/MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +150,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FAB1EC1E97BBCA00D7357D /* MSBandSensorService.framework in Frameworks */,
 				46E17A091E941BB8002B46A5 /* AWSenseShared.framework in Frameworks */,
+				46FAB1EF1E97BBCA00D7357D /* SensorEvaluationShared.framework in Frameworks */,
+				46FAB1E91E97BBCA00D7357D /* PolarHRService.framework in Frameworks */,
 				46E179F31E941766002B46A5 /* HealthKit.framework in Frameworks */,
 				46E17A0D1E941BC3002B46A5 /* AWSenseConnectPhone.framework in Frameworks */,
 			);
@@ -219,6 +235,10 @@
 		46E179F11E941766002B46A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46FAB1F11E97BC0400D7357D /* MicrosoftBandKit_iOS.framework */,
+				46FAB1EE1E97BBCA00D7357D /* SensorEvaluationShared.framework */,
+				46FAB1EB1E97BBCA00D7357D /* MSBandSensorService.framework */,
+				46FAB1E81E97BBCA00D7357D /* PolarHRService.framework */,
 				46E17A161E941BE0002B46A5 /* AWSenseShared.framework */,
 				46E17A131E941BE0002B46A5 /* AWSenseWatch.framework */,
 				46E17A0F1E941BD3002B46A5 /* AWSenseConnectWatch.framework */,
@@ -649,6 +669,7 @@
 				46E179E81E94170F002B46A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46E179EA1E94170F002B46A5 /* Build configuration list for PBXNativeTarget "WearTest WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -657,6 +678,7 @@
 				46E179EC1E94170F002B46A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46E179EE1E94170F002B46A5 /* Build configuration list for PBXNativeTarget "WearTest" */ = {
 			isa = XCConfigurationList;
@@ -665,6 +687,7 @@
 				46E179F01E94170F002B46A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

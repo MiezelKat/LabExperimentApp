@@ -13,7 +13,11 @@ import CoreMotion
 import AWSenseShared
 import AWSenseConnectPhone
 
-class SessionViewController: UITableViewController, RemoteSensingEventHandler {
+import MSBandSensorService
+import PolarHRService
+import SensorEvaluationShared
+
+class SessionViewController: UITableViewController, RemoteSensingEventHandler, PeriphalEventHandler, MSBEventHandler, PolarEventHandler  {
 
     @IBOutlet weak var pIDLabel: UILabel!
 
@@ -27,17 +31,31 @@ class SessionViewController: UITableViewController, RemoteSensingEventHandler {
     
     @IBOutlet weak var polarHRLabel: UILabel!
     
+    var participantID : String = UUID().uuidString
     
+    var startDate = Date()
     
+    let awManager = SessionManager.instance
     
-    let sessionManager = SessionManager.instance
-    
-    var sessionStartDate : Date?
+    let msbManager = MSBService.instance
+    let polarManager = PolarHRService.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        sessionManager.subscribe(handler: self)
+        
+        pIDLabel.text = participantID
+        
+        startLabel.text = DateFormatter.localizedString(from: startDate, dateStyle: .none, timeStyle: .medium)
+        
+        // TODO: timer label
+        
+        
+        awManager.subscribe(handler: self)
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +64,34 @@ class SessionViewController: UITableViewController, RemoteSensingEventHandler {
     }
     
     @IBAction func stopSessionPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func placeMarker(_ sender: Any) {
+        
+    }
+    
+    public func handleEvent(withData data: PeriphalChangedEventData) {
+        if(data.status != .isConnected){
+            print("is not connected: \(data.source)")
+        }
+    }
+
+    /**
+     Handle a new MSB Event with the data
+     
+     - parameter event: event data
+     */
+    public func handleEvent(withData data: MSBEventData) {
+        
+    }
+    
+    /**
+     Handle a new HR Event with the data
+     
+     - parameter event: event data
+     */
+    public func handleEvent(withData data: PolarEventData) {
         
     }
 
