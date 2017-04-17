@@ -10,9 +10,9 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A6780E18-A0B0-443C-BF4F-794F35005375",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "2955ECD860FF0A994B0DF1637DA032E807CD6BF0" : "LabExperiment\/modules\/AWSense\/",
-    "7B12734CF6CB56DE461E21A3D3FC317C217528E5" : "LabExperiment\/",
-    "B38181D1CB1D695946CF44A793028E14DFB8FB37" : "LabExperiment\/modules\/MSBandEvaluation\/"
+    "2955ECD860FF0A994B0DF1637DA032E807CD6BF0" : "LabExperimentApp\/modules\/AWSense\/",
+    "7B12734CF6CB56DE461E21A3D3FC317C217528E5" : "LabExperimentApp\/",
+    "B38181D1CB1D695946CF44A793028E14DFB8FB37" : "LabExperimentApp\/modules\/MSBandEvaluation\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LabExperiment",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
