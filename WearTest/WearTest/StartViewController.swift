@@ -13,7 +13,7 @@ import SensorEvaluationShared
 import WatchConnectivity
 
 
-class StartViewController: UITableViewController, PeriphalEventHandler, MSBEventHandler, PolarEventHandler, WCSessionDelegate {
+class StartViewController: UITableViewController, PeriphalEventHandler, WCSessionDelegate {
     
     
     /** Called when all delegate callbacks for the previously selected watch has occurred. The session can be re-activated for the now selected watch using activateSession. */
@@ -49,19 +49,21 @@ class StartViewController: UITableViewController, PeriphalEventHandler, MSBEvent
     
     private var msbAvailable = false
     private var polarAvailable = false
-    private var awAvailable = false
+    // todo
+    private var awAvailable = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // check sensor sensor status
-        MSBService.instance.subscribe(msbEventHandler: self)
-        MSBService.instance.subscribe(periphalEventHandler: self)
         
-        PolarHRService.instance.subcribeToHREvents(self)
         PolarHRService.instance.subcribeToPeriphalEvents(self)
         
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {(t: Timer) -> () in
+            PolarHRService.instance.connect()
+        })
+    
         if WCSession.isSupported() { // check if the device support to handle an Apple Watch
             let session = WCSession.default()
             session.delegate = self
@@ -71,6 +73,8 @@ class StartViewController: UITableViewController, PeriphalEventHandler, MSBEvent
         }
         
     }
+    
+    
 
     public func handleEvent(withData data: PeriphalChangedEventData) {
         if(data.source == .microsoftBand){
@@ -81,6 +85,9 @@ class StartViewController: UITableViewController, PeriphalEventHandler, MSBEvent
                 msbAvailable = false
             }
         }else if(data.source == .polarStrap){
+            MSBService.instance.subscribe(periphalEventHandler: self)
+            MSBService.instance.connect()
+            
             polarStatusLabel.text = data.status.rawValue
             if(data.status == .isConnected){
                 polarAvailable = true
@@ -88,11 +95,15 @@ class StartViewController: UITableViewController, PeriphalEventHandler, MSBEvent
                 polarAvailable = false
             }
         }
+        checkAndEnableStart()
     }
     
     private func checkAndEnableStart(){
-        startButton.isEnabled = awAvailable && polarAvailable && msbAvailable
-
+        DispatchQueue.main.async {
+            let available = self.awAvailable && self.polarAvailable && self.msbAvailable
+            print("all sensors available: \(available)")
+            self.startButton.isEnabled = available
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,27 +112,17 @@ class StartViewController: UITableViewController, PeriphalEventHandler, MSBEvent
     }
 
     @IBAction func startSessionButtonPressed(_ sender: Any) {
+        let pID = pIDTextField.text!
         
         
+        StudySessionManager.sharedInstance.start(withPID: pID)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "sessionVC")
+        self.present(controller, animated: true, completion: nil)
         
     }
 
-    /**
-     Handle a new MSB Event with the data
-     
-     - parameter event: event data
-     */
-    public func handleEvent(withData data: MSBEventData) {
-        
-    }
-    
-    /**
-     Handle a new HR Event with the data
-     
-     - parameter event: event data
-     */
-    public func handleEvent(withData data: PolarEventData) {
-        
-    }
+
 }
 

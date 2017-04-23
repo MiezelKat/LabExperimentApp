@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46DB4D291EA910E100B93DF2 /* StudySessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DB4D281EA910E100B93DF2 /* StudySessionManager.swift */; };
+		46DB4D361EAA56BA00B93DF2 /* AWSenseConnectWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DB4D351EAA56BA00B93DF2 /* AWSenseConnectWatch.framework */; };
+		46DB4D371EAA56BA00B93DF2 /* AWSenseConnectWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46DB4D351EAA56BA00B93DF2 /* AWSenseConnectWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46DB4D391EAA56C300B93DF2 /* AWSenseWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DB4D381EAA56C300B93DF2 /* AWSenseWatch.framework */; };
+		46DB4D3A1EAA56C300B93DF2 /* AWSenseWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46DB4D381EAA56C300B93DF2 /* AWSenseWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46E179BB1E94170F002B46A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E179BA1E94170F002B46A5 /* AppDelegate.swift */; };
 		46E179BD1E94170F002B46A5 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E179BC1E94170F002B46A5 /* StartViewController.swift */; };
 		46E179C01E94170F002B46A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E179BE1E94170F002B46A5 /* Main.storyboard */; };
@@ -27,10 +32,6 @@
 		46E17A0A1E941BB8002B46A5 /* AWSenseShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A081E941BB8002B46A5 /* AWSenseShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46E17A0D1E941BC3002B46A5 /* AWSenseConnectPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A0C1E941BC3002B46A5 /* AWSenseConnectPhone.framework */; };
 		46E17A0E1E941BC3002B46A5 /* AWSenseConnectPhone.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A0C1E941BC3002B46A5 /* AWSenseConnectPhone.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		46E17A101E941BD3002B46A5 /* AWSenseConnectWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A0F1E941BD3002B46A5 /* AWSenseConnectWatch.framework */; };
-		46E17A111E941BD3002B46A5 /* AWSenseConnectWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A0F1E941BD3002B46A5 /* AWSenseConnectWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		46E17A141E941BE0002B46A5 /* AWSenseWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A131E941BE0002B46A5 /* AWSenseWatch.framework */; };
-		46E17A151E941BE0002B46A5 /* AWSenseWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A131E941BE0002B46A5 /* AWSenseWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46E17A171E941BE0002B46A5 /* AWSenseShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A161E941BE0002B46A5 /* AWSenseShared.framework */; };
 		46E17A181E941BE0002B46A5 /* AWSenseShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E17A161E941BE0002B46A5 /* AWSenseShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46FAB1E91E97BBCA00D7357D /* PolarHRService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FAB1E81E97BBCA00D7357D /* PolarHRService.framework */; };
@@ -102,9 +103,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				46E17A111E941BD3002B46A5 /* AWSenseConnectWatch.framework in Embed Frameworks */,
-				46E17A151E941BE0002B46A5 /* AWSenseWatch.framework in Embed Frameworks */,
+				46DB4D371EAA56BA00B93DF2 /* AWSenseConnectWatch.framework in Embed Frameworks */,
 				46E17A181E941BE0002B46A5 /* AWSenseShared.framework in Embed Frameworks */,
+				46DB4D3A1EAA56C300B93DF2 /* AWSenseWatch.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +113,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		46DB4D281EA910E100B93DF2 /* StudySessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudySessionManager.swift; sourceTree = "<group>"; };
+		46DB4D321EAA567A00B93DF2 /* AWSenseConnectWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseConnectWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46DB4D351EAA56BA00B93DF2 /* AWSenseConnectWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseConnectWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46DB4D381EAA56C300B93DF2 /* AWSenseWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E179B71E94170F002B46A5 /* WearTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WearTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E179BA1E94170F002B46A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46E179BC1E94170F002B46A5 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -136,8 +141,6 @@
 		46E179F91E9418FB002B46A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		46E17A081E941BB8002B46A5 /* AWSenseShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E17A0C1E941BC3002B46A5 /* AWSenseConnectPhone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseConnectPhone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46E17A0F1E941BD3002B46A5 /* AWSenseConnectWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseConnectWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46E17A131E941BE0002B46A5 /* AWSenseWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E17A161E941BE0002B46A5 /* AWSenseShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSenseShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FAB1E81E97BBCA00D7357D /* PolarHRService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PolarHRService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FAB1EB1E97BBCA00D7357D /* MSBandSensorService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MSBandSensorService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,10 +166,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46DB4D361EAA56BA00B93DF2 /* AWSenseConnectWatch.framework in Frameworks */,
 				46E17A171E941BE0002B46A5 /* AWSenseShared.framework in Frameworks */,
-				46E17A101E941BD3002B46A5 /* AWSenseConnectWatch.framework in Frameworks */,
 				46E179F71E94176D002B46A5 /* HealthKit.framework in Frameworks */,
-				46E17A141E941BE0002B46A5 /* AWSenseWatch.framework in Frameworks */,
+				46DB4D391EAA56C300B93DF2 /* AWSenseWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +179,9 @@
 		46E179AE1E94170E002B46A5 = {
 			isa = PBXGroup;
 			children = (
+				46DB4D381EAA56C300B93DF2 /* AWSenseWatch.framework */,
+				46DB4D351EAA56BA00B93DF2 /* AWSenseConnectWatch.framework */,
+				46DB4D321EAA567A00B93DF2 /* AWSenseConnectWatch.framework */,
 				46E179B91E94170F002B46A5 /* WearTest */,
 				46E179CD1E94170F002B46A5 /* WearTest WatchKit App */,
 				46E179DC1E94170F002B46A5 /* WearTest WatchKit Extension */,
@@ -206,6 +212,7 @@
 				46E179C11E94170F002B46A5 /* Assets.xcassets */,
 				46E179C31E94170F002B46A5 /* LaunchScreen.storyboard */,
 				46E179C61E94170F002B46A5 /* Info.plist */,
+				46DB4D281EA910E100B93DF2 /* StudySessionManager.swift */,
 			);
 			path = WearTest;
 			sourceTree = "<group>";
@@ -240,8 +247,6 @@
 				46FAB1EB1E97BBCA00D7357D /* MSBandSensorService.framework */,
 				46FAB1E81E97BBCA00D7357D /* PolarHRService.framework */,
 				46E17A161E941BE0002B46A5 /* AWSenseShared.framework */,
-				46E17A131E941BE0002B46A5 /* AWSenseWatch.framework */,
-				46E17A0F1E941BD3002B46A5 /* AWSenseConnectWatch.framework */,
 				46E17A0C1E941BC3002B46A5 /* AWSenseConnectPhone.framework */,
 				46E17A081E941BB8002B46A5 /* AWSenseShared.framework */,
 				46E179F61E94176D002B46A5 /* HealthKit.framework */,
@@ -403,6 +408,7 @@
 				46E179FA1E9418FB002B46A5 /* SessionViewController.swift in Sources */,
 				46E179BD1E94170F002B46A5 /* StartViewController.swift in Sources */,
 				46E179BB1E94170F002B46A5 /* AppDelegate.swift in Sources */,
+				46DB4D291EA910E100B93DF2 /* StudySessionManager.swift in Sources */,
 				46E179FB1E9418FB002B46A5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WearTest/WearTest.entitlements;
 				DEVELOPMENT_TEAM = G6ZDR46H87;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WearTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ac.uk.qmul.WearTest;
@@ -642,6 +649,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WearTest/WearTest.entitlements;
 				DEVELOPMENT_TEAM = G6ZDR46H87;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WearTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ac.uk.qmul.WearTest;
