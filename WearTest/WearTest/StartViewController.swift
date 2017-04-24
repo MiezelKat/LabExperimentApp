@@ -73,8 +73,6 @@ class StartViewController: UITableViewController, PeriphalEventHandler, WCSessio
         }
         
     }
-    
-    
 
     public func handleEvent(withData data: PeriphalChangedEventData) {
         if(data.source == .microsoftBand){

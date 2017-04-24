@@ -43,8 +43,16 @@ class InterfaceController: WKInterfaceController, SensingEventHandler{
             if(type == .sessionCreated){
                 self.stateLabel.setText("created")
             }else if( type == .sessionStateChanged){
+                
                 self.stateLabel.setText(session.state.rawValue)
+                if(session.state == SensingSessionState.running){
+                    WKInterfaceDevice.current().play(.start)
+                }else if(session.state == SensingSessionState.terminated){
+                    WKInterfaceDevice.current().play(.stop)
+                }
+                
             }
+            
         }
     }
 
