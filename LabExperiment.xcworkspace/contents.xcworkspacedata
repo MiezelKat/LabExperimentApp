@@ -5,12 +5,9 @@
       location = "group:WearTest/WearTest.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:modules/AWSense/AWSenseConnect/AWSenseConnect.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:modules/AWSense/AWSenseWatch/AWSenseWatch.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:modules/MSBandEvaluation/MSbandEvaluation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:modules/AWSense/AWSense/AWSense.xcodeproj">
    </FileRef>
 </Workspace>

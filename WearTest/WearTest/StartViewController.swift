@@ -13,28 +13,28 @@ import SensorEvaluationShared
 import WatchConnectivity
 
 
-class StartViewController: UITableViewController, PeriphalEventHandler, WCSessionDelegate {
+class StartViewController: UITableViewController, PeriphalEventHandler {
     
     
-    /** Called when all delegate callbacks for the previously selected watch has occurred. The session can be re-activated for the now selected watch using activateSession. */
-    @available(iOS 9.3, *)
-    public func sessionDidDeactivate(_ session: WCSession) {
-        awAvailable = session.isPaired
-    }
-
-    /** Called when the session can no longer be used to modify or add any new transfers and, all interactive messages will be cancelled, but delegate callbacks for background transfers can still occur. This will happen when the selected watch is being changed. */
-    @available(iOS 9.3, *)
-    public func sessionDidBecomeInactive(_ session: WCSession) {
-        awAvailable = session.isPaired
-    }
-
-    
-    
-    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
-    @available(iOS 9.3, *)
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        awAvailable = session.isPaired
-    }
+//    /** Called when all delegate callbacks for the previously selected watch has occurred. The session can be re-activated for the now selected watch using activateSession. */
+//    @available(iOS 9.3, *)
+//    public func sessionDidDeactivate(_ session: WCSession) {
+//        awAvailable = session.isPaired
+//    }
+//
+//    /** Called when the session can no longer be used to modify or add any new transfers and, all interactive messages will be cancelled, but delegate callbacks for background transfers can still occur. This will happen when the selected watch is being changed. */
+//    @available(iOS 9.3, *)
+//    public func sessionDidBecomeInactive(_ session: WCSession) {
+//        awAvailable = session.isPaired
+//    }
+//
+//    
+//    
+//    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+//    @available(iOS 9.3, *)
+//    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+//        awAvailable = session.isPaired
+//    }
 
 
     @IBOutlet weak var awStatusLabel: UILabel!
@@ -47,6 +47,8 @@ class StartViewController: UITableViewController, PeriphalEventHandler, WCSessio
     
     @IBOutlet weak var startButton: UIButton!
     
+    private var studySessionManager : StudySessionManager?
+    
     private var msbAvailable = false
     private var polarAvailable = false
     // todo
@@ -57,21 +59,8 @@ class StartViewController: UITableViewController, PeriphalEventHandler, WCSessio
         // Do any additional setup after loading the view, typically from a nib.
         
         // check sensor sensor status
-        
-        PolarHRService.instance.subcribeToPeriphalEvents(self)
-        
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {(t: Timer) -> () in
-            PolarHRService.instance.connect()
-        })
-    
-        if WCSession.isSupported() { // check if the device support to handle an Apple Watch
-            let session = WCSession.default()
-            session.delegate = self
-            session.activate() // activate the session
-            
-            awAvailable = session.isPaired
-        }
-        
+        studySessionManager = StudySessionManager.sharedInstance
+
     }
 
     public func handleEvent(withData data: PeriphalChangedEventData) {
@@ -83,10 +72,7 @@ class StartViewController: UITableViewController, PeriphalEventHandler, WCSessio
                 msbAvailable = false
             }
         }else if(data.source == .polarStrap){
-            MSBService.instance.subscribe(periphalEventHandler: self)
-            MSBService.instance.connect()
-            
-            polarStatusLabel.text = data.status.rawValue
+                        polarStatusLabel.text = data.status.rawValue
             if(data.status == .isConnected){
                 polarAvailable = true
             }else{
@@ -104,6 +90,19 @@ class StartViewController: UITableViewController, PeriphalEventHandler, WCSessio
         }
     }
     
+    
+    @IBAction func connectMSB(_ sender: Any) {
+        MSBService.instance.subscribe(periphalEventHandler: self)
+        MSBService.instance.connect()
+    }
+    
+    @IBAction func connectPolar(_ sender: Any) {
+        PolarHRService.instance.subcribeToPeriphalEvents(self)
+        
+        PolarHRService.instance.connect()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -120,7 +119,7 @@ class StartViewController: UITableViewController, PeriphalEventHandler, WCSessio
         self.present(controller, animated: true, completion: nil)
         
     }
-
+    
 
 }
 

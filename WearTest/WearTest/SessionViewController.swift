@@ -10,7 +10,6 @@ import UIKit
 import HealthKit
 import CoreMotion
 
-import AWSenseShared
 import AWSenseConnectPhone
 
 import MSBandSensorService
@@ -73,7 +72,8 @@ class SessionViewController: UITableViewController   {
     }
     
     @IBAction func stopSessionPressed(_ sender: Any) {
-        
+        StudySessionManager.sharedInstance.stop()
+        self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func placeMarker(_ sender: Any) {

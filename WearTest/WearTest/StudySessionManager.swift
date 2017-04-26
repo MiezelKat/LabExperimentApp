@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import AWSenseShared
 import AWSenseConnectPhone
 import MSBandSensorService
 import PolarHRService
 import SensorEvaluationShared
+import WatchConnectivity
 
 internal class StudySessionManager : MSBEventHandler, PolarEventHandler, RemoteSensingEventHandler {
 
@@ -65,7 +65,7 @@ internal class StudySessionManager : MSBEventHandler, PolarEventHandler, RemoteS
             
             var enabledSensors : [AWSSensorType] = [.heart_rate, .accelerometer, .device_motion]
             
-            let transmissionIntervall = DataTransmissionInterval(10)
+            let transmissionIntervall = DataTransmissionInterval(4)
             
             do {
                 
