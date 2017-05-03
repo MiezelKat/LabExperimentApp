@@ -70,7 +70,7 @@ internal class StudySessionManager : MSBEventHandler, PolarEventHandler, RemoteS
             do {
                 
                 try awSessionManager.startSensingSession(withName: currentSessionID, configuration: enabledSensors,
-                                                         sensorSettings: [RawAccelerometerSensorSettings(withIntervall_Hz: 50.0), DeviceMotionSensorSettings(withIntervall_Hz: 50.0)],
+                                                         sensorSettings: [RawAccelerometerSensorSettings(withIntervall_Hz: 50.0), DeviceMotionSensorSettings(withIntervall_Hz: 50.0), HeartRateSensorSettings()],
                                                          transmissionIntervall: transmissionIntervall)
             }catch let error as Error{
                 print(error)
