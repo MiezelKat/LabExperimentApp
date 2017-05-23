@@ -25,6 +25,10 @@ internal class StudySessionManager : MSBEventHandler, PolarEventHandler, RemoteS
     private(set) var currentPID : String? = nil
     private(set) var currentSessionID : String? = nil
     
+    private var directoryString : String {
+        return "\(currentPID!)_\(currentSessionID!)"
+    }
+    
     private(set) var startDate : Date? = nil
     
     private(set) var running = false
@@ -59,7 +63,7 @@ internal class StudySessionManager : MSBEventHandler, PolarEventHandler, RemoteS
             MSBService.instance.subscribe(msbEventHandler: self)
             PolarHRService.instance.subcribeToHREvents(self)
             
-            polarMsbDataStorage.startRecording(inDirectory: currentSessionID)
+            polarMsbDataStorage.startRecording(inDirectory: directoryString)
             
             // apple watch
             
@@ -71,7 +75,8 @@ internal class StudySessionManager : MSBEventHandler, PolarEventHandler, RemoteS
                 
                 try awSessionManager.startSensingSession(withName: currentSessionID, configuration: enabledSensors,
                                                          sensorSettings: [RawAccelerometerSensorSettings(withIntervall_Hz: 50.0), DeviceMotionSensorSettings(withIntervall_Hz: 50.0), HeartRateSensorSettings()],
-                                                         transmissionIntervall: transmissionIntervall)
+                                                         transmissionIntervall: transmissionIntervall,
+                                                         writeToDir: directoryString)
             }catch let error as Error{
                 print(error)
             }
