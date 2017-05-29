@@ -77,7 +77,7 @@ class SessionViewController: UITableViewController   {
     }
     
     @IBAction func placeMarker(_ sender: Any) {
-        
+        StudySessionManager.sharedInstance.placeMarker()
     }
     
     public func handleEvent(withData data: PeriphalChangedEventData) {
