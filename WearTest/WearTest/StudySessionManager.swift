@@ -106,7 +106,9 @@ internal class StudySessionManager : MSBEventHandler, PolarEventHandler, RemoteS
     }
     
     internal func placeMarker(){
+        
         polarMsbDataStorage.appendMarkerTimestamp()
+
     }
     
     /**
